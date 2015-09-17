@@ -31,6 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Outils/linkedlist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Outils/linkedlist.h" />
+		<Unit filename="Tests/linkedlist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Tests/linkedlist.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

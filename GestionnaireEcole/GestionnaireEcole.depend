@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1442522825 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecole\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Tests/linkedlist.h"
+
+1442525410 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecole\tests\linkedlist.h
+	<stdlib.h>
+	"..\Outils\linkedlist.h"
+
+1442526520 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecole\outils\linkedlist.h
+
+1442525795 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecole\outils\linkedlist.c
+	<stdlib.h>
+	<stdio.h>
+	"..\Outils\linkedlist.h"
+
+1442525759 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecole\tests\linkedlist.c
+	<stdio.h>
+	"..\Tests\linkedlist.h"
+
