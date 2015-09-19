@@ -23,6 +23,8 @@ size_t testPremierMaillon(); //retourne 0 si le premier maillon se crée correcte
 size_t testXMaillons(size_t x); //retourne 0 si tous les maillons se créent correctement, une autre valeur sinon
 size_t testPullUnMaillon();
 size_t testPullXMaillons(size_t x);
+size_t testSuppression();
+void testExec();
 
 void testExecAfficheInt(int *i);
 

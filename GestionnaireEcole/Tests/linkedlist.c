@@ -33,6 +33,11 @@ void testLinkedList()
     {
         printf("Pull sur une liste de 4 maillons Ok.\n");
     }
+    if(!testSuppression())
+    {
+        printf("Suppression liste Ok.\n");
+    }
+    testExec();
 }
 
 
@@ -97,7 +102,7 @@ size_t testXMaillons(size_t x)
 
 void testExecAfficheInt(int* i)
 {
-    printf("TestExec : %d.\n", *i);
+    printf("\tTestExec : %d.\n", *i);
 }
 
 size_t testPullUnMaillon()
@@ -151,4 +156,50 @@ size_t testPullXMaillons(size_t x)
 
     return ok;
 }
+
+size_t testSuppression()
+{
+    LinkedList *l1 = NULL, *l2 = NULL, *l3 = NULL;
+    int var = 1;
+
+    ll_push(&l1, &var);
+    ll_push(&l2, &var);
+    ll_push(&l3, &var);
+    l1->next = l2;
+    l2->next = l3;
+    ll_destroy(&l1, testExecAfficheInt);
+    if(l1 == NULL)
+        return 0;
+    return 1;
+}
+
+void testExecAfficheTableauMult(int* a, int* b)
+{
+    int i;
+    printf("test1\n");
+    for(i = 1; i < *b; i++)
+    {
+        printf("%d ", b[i] * *a);
+    }
+    printf("\n");
+}
+
+void testExec()
+{
+    LinkedList *l = NULL;
+    int val1 = 2, val2 = 5, i;
+    int* tab = (int*)malloc(5 * sizeof(int));
+    tab[0] = 5;
+    for(i = 1; i <= 4; i++)
+    {
+        tab[i] = i;
+    }
+    ll_push(&l, &val1);
+    ll_push(&l, &val2);
+    ll_exec(&l, testExecAfficheTableauMult, (void*)tab);
+
+    ll_destroy(&l, NULL);
+    free(tab);
+}
+
 

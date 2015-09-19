@@ -58,14 +58,30 @@ size_t ll_pull(LinkedList** l, void (*liberation)(void*))
     return 0;
 }
 
-void ll_insert(LinkedList* l, void (*foncteurCond)(), void* cond)
+void ll_insert(LinkedList** l, void (*foncteurCond)(), void* cond)
 {
     ///TO DO
 }
 
-/*void ll_destroy(LinkedList* l, void (*liberation)());
+void ll_remove(LinkedList** l, void (*foncteurCond)(), void* cond)
 {
-    while(!ll_pull(&l, liberation));
-}*/
+    ///TO DO
+}
+
+void ll_exec(LinkedList** l, void (*foncteur)(void*, void*), void* param)
+{
+    if(*l != NULL)
+    {
+        printf("test0\n");
+        foncteur((*l)->elem, param);
+        ll_exec(&((*l)->next), foncteur, param);
+    }
+}
+
+void ll_destroy(LinkedList** l, void (*liberation)())
+{
+    while(!ll_pull(l, liberation));
+}
+
 
 
