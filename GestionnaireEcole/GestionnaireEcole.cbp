@@ -39,9 +39,21 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Tests/linkedlist.h" />
+		<Unit filename="classe.h" />
+		<Unit filename="cours.h" />
+		<Unit filename="ecole.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ecole.h" />
+		<Unit filename="etudiant.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="note.h" />
+		<Unit filename="professeur.h" />
+		<Unit filename="salle.h" />
+		<Unit filename="seance.h" />
+		<Unit filename="structures.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

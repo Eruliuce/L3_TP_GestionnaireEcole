@@ -181,7 +181,7 @@ void testExecAfficheTableauMult(int* a, int* b)
     {
         printf("%d ", b[i] * *a);
     }
-    printf("\n");
+    printf("\n");f
 }
 
 void testExec()
