@@ -1,6 +1,8 @@
 #ifndef STRUCTURES_H_INCLUDED
 #define STRUCTURES_H_INCLUDED
 
+#include "Outils\linkedlist.h"
+
 typedef struct Ecole Ecole;
 typedef struct Classe Classe;
 typedef struct Salle Salle;

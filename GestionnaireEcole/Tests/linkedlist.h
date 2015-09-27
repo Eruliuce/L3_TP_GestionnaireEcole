@@ -25,7 +25,8 @@ size_t testPullUnMaillon();
 size_t testPullXMaillons(size_t x);
 size_t testSuppression();
 void testExec();
-
 void testExecAfficheInt(int *i);
+size_t triNumeral(size_t *a, size_t *b);
+void testInsert();
 
 #endif // TEST_LINKEDLIST_H_INCLUDED

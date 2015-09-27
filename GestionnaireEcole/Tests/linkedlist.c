@@ -38,6 +38,7 @@ void testLinkedList()
         printf("Suppression liste Ok.\n");
     }
     testExec();
+    testInsert();
 }
 
 
@@ -176,12 +177,11 @@ size_t testSuppression()
 void testExecAfficheTableauMult(int* a, int* b)
 {
     int i;
-    printf("test1\n");
     for(i = 1; i < *b; i++)
     {
         printf("%d ", b[i] * *a);
     }
-    printf("\n");f
+    printf("\n");
 }
 
 void testExec()
@@ -202,4 +202,43 @@ void testExec()
     free(tab);
 }
 
+size_t triNumeral(size_t *a, size_t *b)
+{
+    if(*b < *a)
+        return 1;
+    return 0;
+}
+
+void testInsert()
+{
+    size_t i1 = 1, i2 = 2, i3 = 3, i4 = 4, i5 = 5, i6 = 6, i7 = 7, i8 = 8, i9 = 9, i10 = 10;
+    size_t *p1, *p2, *p3, *p4, *p5, *p6, *p7, *p8, *p9, *p10;
+    LinkedList* l = NULL;
+
+    ll_insert(&l, &i2, (void (*))triNumeral);
+    ll_insert(&l, &i7, (void (*))triNumeral);
+    ll_insert(&l, &i3, (void (*))triNumeral);
+    ll_insert(&l, &i9, (void (*))triNumeral);
+    ll_insert(&l, &i1, (void (*))triNumeral);
+    ll_insert(&l, &i8, (void (*))triNumeral);
+    ll_insert(&l, &i5, (void (*))triNumeral);
+    ll_insert(&l, &i10, (void (*))triNumeral);
+    ll_insert(&l, &i6, (void (*))triNumeral);
+    ll_insert(&l, &i4, (void (*))triNumeral);
+
+    p1 = l->elem;
+    p2 = l->next->elem;
+    p3 = l->next->next->elem;
+    p4 = l->next->next->next->elem;
+    p5 = l->next->next->next->next->elem;
+    p6 = l->next->next->next->next->next->elem;
+    p7 = l->next->next->next->next->next->next->elem;
+    p8 = l->next->next->next->next->next->next->next->elem;
+    p9 = l->next->next->next->next->next->next->next->next->elem;
+    p10 = l->next->next->next->next->next->next->next->next->next->elem;
+
+    printf("testInstert : %d, %d, %d, %d, %d, %d, %d, %d, %d, %d\n", *p1, *p2, *p3, *p4, *p5, *p6, *p7, *p8, *p9, *p10);
+
+    ll_destroy(&l, NULL);
+}
 
