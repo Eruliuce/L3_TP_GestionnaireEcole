@@ -101,6 +101,18 @@ void* ll_get(LinkedList** l, void (*foncteurCond)(), void* comparateur, size_t n
     return NULL;
 }
 
+size_t ll_size(LinkedList **l)
+{
+    size_t i = 0;
+    LinkedList *liste = *l;
+    while(liste != NULL)
+    {
+        i++;
+        liste = liste->next;
+    }
+    return i;
+}
+
 void ll_exec(LinkedList** l, void (*foncteur)(void*, void*), void* param)
 {
     if(*l != NULL)

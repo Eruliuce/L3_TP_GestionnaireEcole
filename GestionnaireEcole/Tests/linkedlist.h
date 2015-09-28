@@ -28,5 +28,6 @@ void testExec();
 void testExecAfficheInt(int *i);
 size_t triNumeral(size_t *a, size_t *b);
 void testInsert();
+size_t testSize();
 
 #endif // TEST_LINKEDLIST_H_INCLUDED

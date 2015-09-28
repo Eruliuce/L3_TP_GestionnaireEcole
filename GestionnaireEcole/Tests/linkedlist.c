@@ -39,6 +39,10 @@ void testLinkedList()
     }
     testExec();
     testInsert();
+    if(!testSize())
+    {
+        printf("Test Size Ok.\n");
+    }
 }
 
 
@@ -242,3 +246,15 @@ void testInsert()
     ll_destroy(&l, NULL);
 }
 
+size_t testSize()
+{
+    LinkedList *l = NULL;
+    int i1 = 1, i2 = 1, i3 = 1;
+    ll_push(&l, &i1);
+    ll_push(&l, &i2);
+    ll_push(&l, &i3);
+
+    if(ll_size(&l) == 3)
+        return 0;
+    return 1;
+}
