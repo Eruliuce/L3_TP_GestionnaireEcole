@@ -2,8 +2,8 @@
 #define PROFESSEUR_H_INCLUDED
 
 #include "structures.h"
-#include "cours.h"
+#include "Outils\linkedlist.h"
 
-void pr_ajouterCours(Cours *c);
+
 
 #endif // PROFESSEUR_H_INCLUDED

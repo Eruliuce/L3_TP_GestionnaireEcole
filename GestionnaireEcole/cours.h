@@ -5,6 +5,7 @@
 #include "professeur.h"
 #include "classe.h"
 
-
+void co_affecterProfesseur(Cours* c, Professeur* professeur);
+void co_creerSeance(Cours* c, Salle* s, char* date, char* horraire);
 
 #endif // COURS_H_INCLUDED

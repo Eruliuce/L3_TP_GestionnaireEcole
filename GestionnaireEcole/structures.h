@@ -50,6 +50,7 @@ struct Cours
     char *matiere;
     Professeur *prof;
     Classe *c;
+    LinkedList *seances;
 };
 
 struct Note
@@ -68,7 +69,7 @@ struct Etudiant
     LinkedList *listeNotes;
 };
 
-struct seance
+struct Seance
 {
     Salle *s;
     char *date;

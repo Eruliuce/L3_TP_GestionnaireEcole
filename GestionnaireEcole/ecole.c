@@ -15,7 +15,7 @@ Ecole* ec_genererEcole()
     return ec;
 }
 
-void ec_creerSalle(char bat, int etage, int num, Salle *listeSalles)
+void ec_creerSalle(char bat, int etage, int num, LinkedList *listeSalles)
 {
     Salle *s = (Salle*)malloc(sizeof(Salle));
     s->bat = bat;
