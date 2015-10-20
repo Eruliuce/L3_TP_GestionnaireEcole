@@ -1,10 +1,14 @@
 #ifndef NOTE_H_INCLUDED
 #define NOTE_H_INCLUDED
 
-#include "structures.h"
-#include "etudiant.h"
-#include "cours.h"
+#include "ecole.h"
 
-
+struct Note
+{
+    float valeur;
+    Etudiant *e;
+    Cours *c;
+};
 
 #endif // NOTE_H_INCLUDED
+

@@ -53,7 +53,9 @@
 		<Unit filename="professeur.h" />
 		<Unit filename="salle.h" />
 		<Unit filename="seance.h" />
-		<Unit filename="structures.h" />
+		<Unit filename="typedef.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

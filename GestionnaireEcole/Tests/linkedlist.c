@@ -292,11 +292,10 @@ size_t testRemove()
     ll_push(&l, &i8);
     ll_push(&l, &i9);
     ll_push(&l, &i10);
-    ll_remove(&l, comparaisonNum, 3, NULL, 1);
-    ll_remove(&l, comparaisonNum, 2, NULL, 4);
-    ll_remove(&l, comparaisonNum, 4, NULL, 0);
-    ll_remove(&l, comparaisonNum, 1, NULL, 1);
-    LinkedList *tmp = l;
+    ll_remove(&l, (void*)comparaisonNum, (void*)3, NULL, 1);
+    ll_remove(&l, (void*)comparaisonNum, (void*)2, NULL, 4);
+    ll_remove(&l, (void*)comparaisonNum, (void*)4, NULL, 0);
+    ll_remove(&l, (void*)comparaisonNum, (void*)1, NULL, 1);
 
     if(*((int*)(l->elem)) == 3 && *((int*)(l->next->elem)) == 1 && *((int*)(l->next->next->elem)) == 2 && l->next->next->next == NULL)
         res = 0;
@@ -321,11 +320,11 @@ size_t testGet()
     ll_push(&l, &i8);
     ll_push(&l, &i9);
     ll_push(&l, &i10);
-    resL = ll_get(&l, comparaisonNum, 2, 3);
+    resL = ll_get(&l, (void*)comparaisonNum, (void*)2, 3);
     if(!(*((int*)(resL->elem)) == 2 && *((int*)(resL->next->elem)) == 2 && *((int*)(resL->next->next->elem)) == 2 && resL->next->next->next == NULL))
         res++;
     ll_destroy(&resL, NULL);
-    resL = ll_get(&l, comparaisonNum, 3, 0);
+    resL = ll_get(&l, (void*)comparaisonNum, (void*)3, 0);
     if(!(*((int*)(resL->elem)) == 3 && *((int*)(resL->next->elem)) == 3 && resL->next->next == NULL))
         res++;
     ll_destroy(&resL, NULL);
