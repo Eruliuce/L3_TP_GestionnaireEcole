@@ -3,10 +3,10 @@
 ///     linkedlist.c                                ///
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
-/// Création : 17/09/2015                           ///
-/// Dernière modification : 17/09/2015              ///
+/// CrÃ©ation : 17/09/2015                           ///
+/// DerniÃ¨re modification : 20/10/2015              ///
 ///                                                 ///
-/// Fonction : Définit une liste chaînée générique. ///
+/// Fonction : DÃ©finit une liste chaÃ®nÃ©e gÃ©nÃ©rique. ///
 ///                                                 ///
 /// ///////////////////////////////////////////////////
 
@@ -68,7 +68,7 @@ void ll_insert(LinkedList** l, void *elem, void* (*foncteurCond)(void*, void*))
     {
         *l = newMaillon;
     }
-    else if(foncteurCond((*l)->elem, elem)) // insertion au début
+    else if(foncteurCond((*l)->elem, elem)) // insertion au dÃ©but
     {
         newMaillon->next = *l;
         *l = newMaillon;
@@ -90,15 +90,71 @@ void ll_insert(LinkedList** l, void *elem, void* (*foncteurCond)(void*, void*))
     }
 }
 
-void ll_remove(LinkedList** l, void (*foncteurCond)(), void* comparateur, size_t nbrElem)
+void ll_remove(LinkedList** l, void* (*foncteurCond)(void*, void*), void* comparateur, void(*liberation)(void*), size_t nbrElem)
 {
-    ///TO DO
+    LinkedList *tmp;
+    LinkedList *precedent;
+    short next = 1;
+    short all = nbrElem == 0 ? 1 : 0;
+    short nontrouve;
+
+    while(next && (all || nbrElem))
+    {
+        next = 0;
+        if(*l != NULL)
+        {
+            precedent = *l;
+            if(foncteurCond(precedent->elem, comparateur)) // tÃªte de liste
+            {
+                *l = precedent->next;
+                if(liberation != NULL)
+                {
+                    liberation(precedent->elem);
+                }
+                free(precedent);
+                nbrElem--;
+                next = 1;
+            }
+            else
+            {
+                precedent = *l;
+                tmp = (*l)->next;
+                nontrouve = 1;
+                while(tmp != NULL && nontrouve)
+                {
+                    if(foncteurCond(tmp->elem, comparateur))
+                    {
+                        precedent->next = tmp->next;
+                        if(liberation != NULL)
+                            liberation(tmp->elem);
+                        free(tmp);
+                        nbrElem--;
+                        nontrouve = 0;
+                        next = 1;
+                    }
+                    precedent = tmp;
+                    tmp = tmp->next;
+                }
+            }
+        }
+    }
 }
 
-void* ll_get(LinkedList** l, void (*foncteurCond)(), void* comparateur, size_t nbrElem)
+void* ll_get(LinkedList** l, void* (*foncteurCond)(), void* comparateur, size_t nbrElem)
 {
-    ///TO DO
-    return NULL;
+    LinkedList *res = NULL;
+    LinkedList *tmp = *l;
+    short all = !nbrElem ? 1 : 0;
+    while(tmp != NULL && (all || nbrElem))
+    {
+        if(foncteurCond(tmp->elem, comparateur))
+        {
+            ll_push(&res, tmp->elem);
+            nbrElem--;
+        }
+        tmp = tmp->next;
+    }
+    return res;
 }
 
 size_t ll_size(LinkedList **l)
@@ -126,6 +182,4 @@ void ll_destroy(LinkedList** l, void (*liberation)())
 {
     while(!ll_pull(l, liberation));
 }
-
-
 
