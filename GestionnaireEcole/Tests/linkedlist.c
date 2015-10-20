@@ -3,11 +3,11 @@
 ///     test_linkedlist.c                           ///
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
-/// Création : 17/09/2015                           ///
-/// Dernière modification : 17/09/2015              ///
+/// CrÃ©ation : 17/09/2015                           ///
+/// DerniÃ¨re modification : 20/10/2015              ///
 ///                                                 ///
-/// Fonction : Test des fonctionnalités de la       ///
-///            liste chaînée.                       ///
+/// Fonction : Test des fonctionnalitÃ©s de la       ///
+///            liste chaÃ®nÃ©e.                       ///
 ///                                                 ///
 /// ///////////////////////////////////////////////////
 
@@ -42,6 +42,14 @@ void testLinkedList()
     if(!testSize())
     {
         printf("Test Size Ok.\n");
+    }
+    if(!testRemove())
+    {
+        printf("Test Remove Ok.\n");
+    }
+    if(!testGet())
+    {
+        printf("Test Get Ok.\n");
     }
 }
 
@@ -213,6 +221,13 @@ size_t triNumeral(size_t *a, size_t *b)
     return 0;
 }
 
+size_t comparaisonNum(size_t *a, size_t b)
+{
+    if(*a == b)
+        return 1;
+    return 0;
+}
+
 void testInsert()
 {
     size_t i1 = 1, i2 = 2, i3 = 3, i4 = 4, i5 = 5, i6 = 6, i7 = 7, i8 = 8, i9 = 9, i10 = 10;
@@ -249,12 +264,70 @@ void testInsert()
 size_t testSize()
 {
     LinkedList *l = NULL;
+    short res = 1;
     int i1 = 1, i2 = 1, i3 = 1;
     ll_push(&l, &i1);
     ll_push(&l, &i2);
     ll_push(&l, &i3);
 
     if(ll_size(&l) == 3)
-        return 0;
-    return 1;
+        res = 0;
+    ll_destroy(&l, NULL);
+    return res;
+}
+
+size_t testRemove()
+{
+    LinkedList *l = NULL;
+    short res = 1;
+    int i1 = 1, i2 = 2, i3 = 3, i4 = 4, i5 = 3, i6 = 2, i7 = 1, i8 = 2, i9 = 2, i10 = 2;
+
+    ll_push(&l, &i1);
+    ll_push(&l, &i2);
+    ll_push(&l, &i3);
+    ll_push(&l, &i4);
+    ll_push(&l, &i5);
+    ll_push(&l, &i6);
+    ll_push(&l, &i7);
+    ll_push(&l, &i8);
+    ll_push(&l, &i9);
+    ll_push(&l, &i10);
+    ll_remove(&l, comparaisonNum, 3, NULL, 1);
+    ll_remove(&l, comparaisonNum, 2, NULL, 4);
+    ll_remove(&l, comparaisonNum, 4, NULL, 0);
+    ll_remove(&l, comparaisonNum, 1, NULL, 1);
+    LinkedList *tmp = l;
+
+    if(*((int*)(l->elem)) == 3 && *((int*)(l->next->elem)) == 1 && *((int*)(l->next->next->elem)) == 2 && l->next->next->next == NULL)
+        res = 0;
+    ll_destroy(&l, NULL);
+    return res;
+}
+
+
+size_t testGet()
+{
+    LinkedList *l = NULL;
+    LinkedList *resL = NULL;
+    short res = 0;
+    int i1 = 1, i2 = 2, i3 = 3, i4 = 4, i5 = 3, i6 = 2, i7 = 1, i8 = 2, i9 = 2, i10 = 2;
+    ll_push(&l, &i1);
+    ll_push(&l, &i2);
+    ll_push(&l, &i3);
+    ll_push(&l, &i4);
+    ll_push(&l, &i5);
+    ll_push(&l, &i6);
+    ll_push(&l, &i7);
+    ll_push(&l, &i8);
+    ll_push(&l, &i9);
+    ll_push(&l, &i10);
+    resL = ll_get(&l, comparaisonNum, 2, 3);
+    if(!(*((int*)(resL->elem)) == 2 && *((int*)(resL->next->elem)) == 2 && *((int*)(resL->next->next->elem)) == 2 && resL->next->next->next == NULL))
+        res++;
+    ll_destroy(&resL, NULL);
+    resL = ll_get(&l, comparaisonNum, 3, 0);
+    if(!(*((int*)(resL->elem)) == 3 && *((int*)(resL->next->elem)) == 3 && resL->next->next == NULL))
+        res++;
+    ll_destroy(&resL, NULL);
+    return res;
 }
