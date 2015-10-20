@@ -3,10 +3,10 @@
 ///     linkedlist.h                                ///
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
-/// CrÈation : 17/09/2015                           ///
-/// DerniËre modification : 17/09/2015              ///
+/// Cr√©ation : 17/09/2015                           ///
+/// Derni√®re modification : 20/10/2015              ///
 ///                                                 ///
-/// Fonction : DÈfinit une liste chaÓnÈe gÈnÈrique. ///
+/// Fonction : D√©finit une liste cha√Æn√©e g√©n√©rique. ///
 ///                                                 ///
 /// ///////////////////////////////////////////////////
 
@@ -21,38 +21,52 @@ struct LinkedList
 };
 
 void ll_push(LinkedList**, void*);
-/// {Ajoute un ÈlÈment ‡ la fin de la liste.}
-/// ParamËtres :    - adresse de la liste ‡ modifier
-///                 - adresse de l'ÈlÈment ‡ ajouter
+/// {Ajoute un √©l√©ment √† la fin de la liste.}
+/// Param√®tres :    - adresse de la liste √† modifier
+///                 - adresse de l'√©l√©ment √† ajouter
 
 size_t ll_pull(LinkedList** l, void (*liberation)(void*));
-/// {Retire le dernier ÈlÈment de la liste. Retourne 0 en cas de rÈussite, 1 en cas d'Èchec.}
-/// ParamËtres :    - adresse de la liste ‡ modifier
-///                 - fonction permettant de liibÈrÈ les ÈlÈments allouÈs dans la liste
-///                   (NULL si l'ÈlÈment n'est pas allouÈ dynamiquement).
+/// {Retire le dernier √©l√©ment de la liste.}
+/// Param√®tres :    - adresse de la liste √† modifier
+///                 - fonction permettant de liib√©r√© les √©l√©ments allou√©s dans la liste
+///                   (NULL si l'√©l√©ment n'est pas allou√© dynamiquement).
+/// Retourne 0 en cas de r√©ussite, 1 en cas d'√©chec.
 
 void ll_insert(LinkedList** l, void *elem, void* (*foncteurCond)(void*, void*));
-/// {Insert un ÈlÈment dans la liste en le triant.}
-/// ParamËtres :    - adresse de la liste ‡ modifier
-///                 - adresse ÈlÈment ‡ ajouter
-///                 - fonction de condition prenant en paramËtre un ÈlÈment et l'ÈlÈment suivant pour les comparer
-///                   cette fonction doit retourner 1 lorsqu'on doit insÈrer l'ÈlÈment, 0 sinon
+/// {Insert un √©l√©ment dans la liste en le triant.}
+/// Param√®tres :    - adresse de la liste √† modifier
+///                 - adresse √©l√©ment √† ajouter
+///                 - fonction de condition prenant en param√®tre un √©l√©ment et l'√©l√©ment suivant pour les comparer
+///                   cette fonction doit retourner 1 lorsqu'on doit ins√©rer l'√©l√©ment, 0 sinon
 
-void ll_remove(LinkedList** l, void (*foncteurCond)(), void* comparateur, size_t nbrElem); //retire un ÈlÈment de la liste selon une condition
-void* ll_get(LinkedList** l, void (*foncteurCond)(), void* comparateur, size_t nbrElem);
+void ll_remove(LinkedList** l, void* (*foncteurCond)(void*, void*), void* comparateur, void(*liberation)(void*), size_t nbrElem);
+/// {Retire un √©l√©ment de la liste.}
+/// Param√®tres :    - adresse de la liste
+///                 - fonction de condition (pour choisir les √©l√©ments √† retirer)
+///                 - param√®tre de comparaison pour la fonction de condition
+///                 - nombre d'√©l√©ments √† supprimer (0 pour tous, 1 pour le premier, 2 pour les deux premiers, etc.)
+
+void* ll_get(LinkedList** l, void* (*foncteurCond)(), void* comparateur, size_t nbrElem);
+/// {Retourne les √©l√©ments d'une liste selon une condition.}
+/// Param√®tres :    - adresse de la liste
+///                 - fonction de condition
+///                 - param√®tre pour la fonction de condition
+///                 - nombre d'√©l√©ments √† obtenir (0 pour tous, 1 pour le premier, 2 pour les deux premiers, etc.)
+/// Rretourne une LinkedList contenant tout les √©l√©ments demand√©s.
 
 void ll_exec(LinkedList**, void (*foncteur)(), void* parametre);
-/// {Appelle une fonction sur tous les ÈlÈments de la liste.}
-/// ParamËtres :    - adresse de la liste
-///                 - fonction a Èxecuter
-///                 - paramËtre ou liste de paramËtres ‡ passer ‡ la fonction
+/// {Appelle une fonction sur tous les √©l√©ments de la liste.}
+/// Param√®tres :    - adresse de la liste
+///                 - fonction a √©xecuter
+///                 - param√®tre ou liste de param√®tres √† passer √† la fonction
 
 void ll_destroy(LinkedList**, void (*liberation)());
-/// {DÈtruit tous les maillons de la liste.}
-/// ParamËtres :    - adresse de la liste
-///                 - fonction de libÈration de l'ÈlÈment (NULL si l'ÈlÈment n'est pas allouÈ dinamyquement)
+/// {D√©truit tous les maillons de la liste.}
+/// Param√®tres :    - adresse de la liste
+///                 - fonction de lib√©ration de l'√©l√©ment (NULL si l'√©l√©ment n'a pas besoin de traitement particulier)
 
 size_t ll_size(LinkedList **l);
-/// {Retourne la taille de la liste passÈe en paramËtre.}
+/// {Retourne la taille de la liste pass√©e en param√®tre.}
 
 #endif // LINKEDLIST_H_INCLUDED
+
