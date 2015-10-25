@@ -1,17 +1,20 @@
 #ifndef COURS_H_INCLUDED
 #define COURS_H_INCLUDED
 
-#include "ecole.h"
+#include "Outils/linkedlist.h"
+#include "professeur.h"
+#include "salle.h"
+#include "classe.h"
 
+typedef struct Cours Cours;
 struct Cours
 {
     char *matiere;
     struct Professeur *prof;
-    Classe *c;
-    LinkedList *seances;
+    Classe *classe;
+    LinkedList *listeSeances;
 };
 
-void co_affecterProfesseur(Cours* c, struct Professeur* professeur);
-void co_creerSeance(Cours *c, Salle *s, char *date, char *horraire);
+void creerCours(LinkedList* listeCours, char* matiere, Professeur* p, Classe *c);
 
 #endif // COURS_H_INCLUDED

@@ -1,18 +1,12 @@
-#include <stdlib.h>
-#include "structures.h"
 #include "cours.h"
 
-void co_affecterProfesseur(Cours* c, Professeur* professeur)
+void creerCours(LinkedList* listeCours, char* matiere, Professeur* p, Classe *cl)
 {
-    c->prof = &professeur;
-}
-
-
-void co_creerSeance(Cours* c, Salle* s, char* date, char* horraire)
-{
-    Seance se = (Seance*)malloc(sizeof(Seance));
-    se.date = date;
-    se.horaire = horraire;
-    se.s = s;
-    ll_push(&(c->listeSeance), );
+    Cours *c = (Cours*)malloc(sizeof(Cours));
+    c->matiere = matiere;
+    c->prof = p;
+    c->classe = cl;
+    c->listeSeances = NULL;
+    ll_push(&listeCours, c);
+    ll_push(&(p->listeCours), c);
 }

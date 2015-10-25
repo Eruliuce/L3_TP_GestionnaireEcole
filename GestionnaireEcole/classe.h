@@ -1,9 +1,11 @@
 #ifndef CLASSE_H_INCLUDED
 #define CLASSE_H_INCLUDED
 
-#include "ecole.h"
+#include "Outils/linkedlist.h"
+#include "classe.h"
+#include "professeur.h"
 
-
+typedef struct Classe Classe;
 struct Classe
 {
     char *annee;
@@ -12,7 +14,6 @@ struct Classe
     LinkedList *listeCours;
 };
 
-void cl_creerEtudiant(LinkedList** listeEtudiants, char* nom, char* prenom, int numero, Classe* c);
-void cl_creerCours(LinkedList** listeCours, Classe* c, char* matiere, Professeur* prof);
+void creerClasse(LinkedList *listeClasses, char* annee, char* formation);
 
 #endif // CLASSE_H_INCLUDED

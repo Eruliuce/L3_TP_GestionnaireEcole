@@ -16,6 +16,7 @@
 
 #include <stdlib.h>
 #include "..\Outils\linkedlist.h"
+#include "..\Outils\fonctions.h"
 
 void testLinkedList(); //éxecute une série de tests pour vérifier que la LinkedList fonctionne bien
 
@@ -27,7 +28,6 @@ size_t testSuppression();
 void testExec();
 void testExecAfficheInt(int *i);
 size_t triNumeral(size_t *a, size_t *b);
-size_t comparaisonNum(size_t *a, size_t b);
 void testInsert();
 size_t testSize();
 size_t testRemove();

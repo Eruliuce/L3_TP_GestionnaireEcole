@@ -1,8 +1,13 @@
 #ifndef ETUDIANT_H_INCLUDED
 #define ETUDIANT_H_INCLUDED
 
-#include "ecole.h"
+#include <stdlib.h>
+#include "Outils/linkedlist.h"
+#include "cours.h"
+#include "classe.h"
+#include "note.h"
 
+typedef struct Etudiant Etudiant;
 struct Etudiant
 {
     int num;
@@ -12,8 +17,8 @@ struct Etudiant
     LinkedList *listeNotes;
 };
 
-int etu_fonctionComp(Etudiant* e, int numero);
-void etu_changerClasse(Etudiant* e, Classe* oldClasse, Classe* newClasse);
-void etu_affecterNote(Etudiant** e, Cours *c, float val);
+void creerEtudiant(LinkedList *listeEtu, char* nom, char* prenom);
+void affecterClasse(Etudiant* e, Classe* c);
+void affecterNote(Etudiant* e, Cours *c, float val);
 
 #endif // ETUDIANT_H_INCLUDED

@@ -140,7 +140,7 @@ void ll_remove(LinkedList** l, void* (*foncteurCond)(void*, void*), void* compar
     }
 }
 
-void* ll_get(LinkedList** l, void* (*foncteurCond)(), void* comparateur, size_t nbrElem)
+LinkedList* ll_get(LinkedList** l, void* (*foncteurCond)(), void* comparateur, size_t nbrElem)
 {
     LinkedList *res = NULL;
     LinkedList *tmp = *l;

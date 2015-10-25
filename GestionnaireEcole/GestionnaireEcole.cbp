@@ -31,6 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Outils/fonctions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Outils/fonctions.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Outils/linkedlist.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -39,23 +45,41 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Tests/linkedlist.h" />
+		<Unit filename="classe.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="classe.h" />
+		<Unit filename="constantes.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="cours.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="cours.h" />
 		<Unit filename="ecole.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ecole.h" />
+		<Unit filename="etudiant.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="etudiant.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="note.h" />
-		<Unit filename="professeur.h" />
-		<Unit filename="salle.h" />
-		<Unit filename="seance.h" />
-		<Unit filename="typedef.h">
-			<Option target="&lt;{~None~}&gt;" />
+		<Unit filename="professeur.c">
+			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="professeur.h" />
+		<Unit filename="salle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="salle.h" />
+		<Unit filename="seance.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="seance.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

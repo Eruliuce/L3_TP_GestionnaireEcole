@@ -13,6 +13,8 @@
 #ifndef LINKEDLIST_H_INCLUDED
 #define LINKEDLIST_H_INCLUDED
 
+#include <stdlib.h>
+
 typedef struct LinkedList LinkedList;
 struct LinkedList
 {
@@ -46,7 +48,7 @@ void ll_remove(LinkedList** l, void* (*foncteurCond)(void*, void*), void* compar
 ///                 - paramètre de comparaison pour la fonction de condition
 ///                 - nombre d'éléments à supprimer (0 pour tous, 1 pour le premier, 2 pour les deux premiers, etc.)
 
-void* ll_get(LinkedList** l, void* (*foncteurCond)(), void* comparateur, size_t nbrElem);
+LinkedList* ll_get(LinkedList** l, void* (*foncteurCond)(), void* comparateur, size_t nbrElem);
 /// {Retourne les éléments d'une liste selon une condition.}
 /// Paramètres :    - adresse de la liste
 ///                 - fonction de condition

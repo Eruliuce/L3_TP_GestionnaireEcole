@@ -1,24 +1,28 @@
-#include <stdlib.h>
-#include "structures.h"
 #include "etudiant.h"
 
-int etu_fonctionComp(Etudiant* e, int numero)
+void creerEtudiant(LinkedList *listeEtu, char* nom, char* prenom)
 {
-    return e->num==numero? 1:0;
+    static int nextNum = 1;
+    Etudiant *e = (Etudiant*)malloc(sizeof(Etudiant));
+    e->nom = nom;
+    e->prenom = prenom;
+    e->num = nextNum;
+    nextNum++;
+    e->listeNotes = NULL;
+    ll_push(&listeEtu, e);
 }
 
-void etu_changerClasse(Etudiant* e, Classe* oldClasse, Classe* newClasse)
+void affecterClasse(Etudiant* e, Classe* c)
 {
-    e->c = newClasse;
-    ll_remove(&(oldClasse->listeEtudiants), etu_fonctionComp, &(e->num), 1);
-    ll_push(&(newClasse->listeEtudiants), e);
+    ll_push(&(c->listeEtudiants), e);
+    e->c = c;
 }
 
-void etu_affecterNote(Etudiant** e, Cours* c, float val)
+void affecterNote(Etudiant* e, Cours *c, float val)
 {
-    Note n = (Note*)malloc(sizeof(Note));
+    Note *n = (Note*)malloc(sizeof(Note));
     n->valeur = val;
-    n->c = c;
-    ll_push(e->listeNotes, n)
+    n->etu = e;
+    n->cours = c;
+    ll_push(&(e->listeNotes), n);
 }
-

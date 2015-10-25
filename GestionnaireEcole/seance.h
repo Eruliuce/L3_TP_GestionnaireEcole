@@ -1,13 +1,17 @@
 #ifndef SEANCE_H_INCLUDED
 #define SEANCE_H_INCLUDED
 
-#include "ecole.h"
+#include "salle.h"
+#include "cours.h"
 
+typedef struct Seance Seance;
 struct Seance
 {
-    Salle *s;
+    Salle *salle;
     char *date;
     char *horaire;
 };
+
+void creerSeance(Cours *c, Salle *sa, char *date, char *horaire);
 
 #endif // SEANCE_H_INCLUDED

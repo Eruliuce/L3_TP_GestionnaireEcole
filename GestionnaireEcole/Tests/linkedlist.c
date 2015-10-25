@@ -221,13 +221,6 @@ size_t triNumeral(size_t *a, size_t *b)
     return 0;
 }
 
-size_t comparaisonNum(size_t *a, size_t b)
-{
-    if(*a == b)
-        return 1;
-    return 0;
-}
-
 void testInsert()
 {
     size_t i1 = 1, i2 = 2, i3 = 3, i4 = 4, i5 = 5, i6 = 6, i7 = 7, i8 = 8, i9 = 9, i10 = 10;

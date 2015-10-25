@@ -1,8 +1,9 @@
 #ifndef PROFESSEUR_H_INCLUDED
 #define PROFESSEUR_H_INCLUDED
 
-#include "ecole.h"
+#include "Outils/linkedlist.h"
 
+typedef struct Professeur Professeur;
 struct Professeur
 {
     int num;
@@ -10,5 +11,7 @@ struct Professeur
     char *prenom;
     LinkedList *listeCours;
 };
+
+creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom);
 
 #endif // PROFESSEUR_H_INCLUDED
