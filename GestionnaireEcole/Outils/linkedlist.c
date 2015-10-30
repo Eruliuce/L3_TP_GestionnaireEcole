@@ -30,7 +30,7 @@ void ll_push(LinkedList **l, void *elem)
 
 size_t ll_pull(LinkedList** l, void (*liberation)(void*))
 {
-    if(*l == NULL) // 0 maillons : erruer
+    if(*l == NULL) // 0 maillons : erreur
         return 1;
     else if((*l)->next == NULL) // 1 seul maillon
     {
@@ -41,11 +41,11 @@ size_t ll_pull(LinkedList** l, void (*liberation)(void*))
         free(*l);
         *l = NULL;
     }
-    else if((*l)->next->next != NULL)
+    else if((*l)->next->next != NULL) // appel récursif
     {
         ll_pull(&(*l)->next, liberation);
     }
-    else
+    else  // fin de chaîne
     {
         if(liberation != NULL)
         {
@@ -115,7 +115,7 @@ void ll_remove(LinkedList** l, void* (*foncteurCond)(void*, void*), void* compar
                 nbrElem--;
                 next = 1;
             }
-            else
+            else // flemme de chercher la méthode récursive donc je parcours toute la liste jusqu'à trouver l'élément
             {
                 precedent = *l;
                 tmp = (*l)->next;

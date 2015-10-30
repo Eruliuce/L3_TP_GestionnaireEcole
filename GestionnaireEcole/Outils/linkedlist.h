@@ -30,7 +30,7 @@ void ll_push(LinkedList**, void*);
 size_t ll_pull(LinkedList** l, void (*liberation)(void*));
 /// {Retire le dernier élément de la liste.}
 /// Paramètres :    - adresse de la liste à modifier
-///                 - fonction permettant de liibéré les éléments alloués dans la liste
+///                 - fonction permettant de libérer les éléments alloués dans la liste
 ///                   (NULL si l'élément n'est pas alloué dynamiquement).
 /// Retourne 0 en cas de réussite, 1 en cas d'échec.
 
