@@ -12,6 +12,6 @@ struct Professeur
     LinkedList *listeCours;
 };
 
-creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom);
+void creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom);
 
 #endif // PROFESSEUR_H_INCLUDED

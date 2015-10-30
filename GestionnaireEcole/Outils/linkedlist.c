@@ -4,7 +4,7 @@
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
 /// Création : 17/09/2015                           ///
-/// Dernière modification : 20/10/2015              ///
+/// Dernière modification : 30/10/2015              ///
 ///                                                 ///
 /// Fonction : Définit une liste chaînée générique. ///
 ///                                                 ///
@@ -181,5 +181,36 @@ void ll_exec(LinkedList** l, void (*foncteur)(void*, void*), void* param)
 void ll_destroy(LinkedList** l, void (*liberation)())
 {
     while(!ll_pull(l, liberation));
+}
+
+int ll_index(LinkedList **l, void* (*foncteurCond)(), void* comparateur)
+{
+    size_t cpt = 0;
+    LinkedList *tmp = *l;
+    while(!foncteurCond(tmp->elem, comparateur) && tmp != NULL)
+    {
+        cpt++;
+        tmp = tmp->next;
+    }
+    if(tmp == NULL)
+        return -1;
+    else
+        return (int)cpt;
+}
+
+
+void* ll_at(LinkedList **l, size_t index)
+{
+    size_t i = 0;
+    LinkedList *tmp = *l;
+    while(i < index && tmp != NULL)
+    {
+        i++;
+        tmp = tmp->next;
+    }
+    if(tmp == NULL)
+        return NULL;
+    else
+        return (void*)(tmp->elem);
 }
 

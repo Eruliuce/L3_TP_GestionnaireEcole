@@ -3,6 +3,7 @@
 
 #include "ecole.h"
 #include "Outils/fonctions.h"
+#include "Tests/linkedlist.h"
 
 int main()
 {

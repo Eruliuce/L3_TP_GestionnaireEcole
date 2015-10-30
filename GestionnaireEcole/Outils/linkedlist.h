@@ -4,7 +4,7 @@
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
 /// Création : 17/09/2015                           ///
-/// Dernière modification : 20/10/2015              ///
+/// Dernière modification : 30/10/2015              ///
 ///                                                 ///
 /// Fonction : Définit une liste chaînée générique. ///
 ///                                                 ///
@@ -69,6 +69,19 @@ void ll_destroy(LinkedList**, void (*liberation)());
 
 size_t ll_size(LinkedList **l);
 /// {Retourne la taille de la liste passée en paramètre.}
+
+int ll_index(LinkedList **l, void* (*foncteurCond)(), void* comparateur);
+/// {Retourne l'index du premier élément de la liste correspondant à la condition.}
+/// Paramètres :    - adresse de la liste
+///                 - fonction de comparaison
+///                 - élément de comparaison
+/// Retourne -1 si aucun élément ne correspond, l'index de l'élément sinon.
+
+void* ll_at(LinkedList **l, size_t index);
+/// {Retourne un pointeur sur le xème élément (commence à 0).}
+/// Paramètres :    - adresse de la liste
+///                 - index de l'élément
+/// Retourne NULL en cas de débordement, l'élément souhaité sinon.
 
 #endif // LINKEDLIST_H_INCLUDED
 

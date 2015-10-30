@@ -4,7 +4,7 @@
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
 /// Création : 17/09/2015                           ///
-/// Dernière modification : 20/10/2015              ///
+/// Dernière modification : 30/10/2015              ///
 ///                                                 ///
 /// Fonction : Test des fonctionnalités de la       ///
 ///            liste chaînée.                       ///
@@ -50,6 +50,14 @@ void testLinkedList()
     if(!testGet())
     {
         printf("Test Get Ok.\n");
+    }
+    if(!testIndex())
+    {
+        printf("Test Index Ok.\n");
+    }
+    if(!testAt())
+    {
+        printf("Test At Ok.\n");
     }
 }
 
@@ -321,5 +329,33 @@ size_t testGet()
     if(!(*((int*)(resL->elem)) == 3 && *((int*)(resL->next->elem)) == 3 && resL->next->next == NULL))
         res++;
     ll_destroy(&resL, NULL);
+    return res;
+}
+
+size_t testIndex()
+{
+    LinkedList *l = NULL;
+    int a1 = 1, a2 = 2, a3 = 3, a4 = 4, res = 1;
+    ll_push(&l, &a1);
+    ll_push(&l, &a2);
+    ll_push(&l, &a3);
+    ll_push(&l, &a4);
+    if(ll_index(&l, (void*)comparaisonNum, (void*)3) == 2)
+        res = 0;
+    ll_destroy(&l, NULL);
+    return res;
+}
+
+size_t testAt()
+{
+    LinkedList *l = NULL;
+    int a1 = 1, a2 = 2, a3 = 3, a4 = 4, res = 1;
+    ll_push(&l, &a1);
+    ll_push(&l, &a2);
+    ll_push(&l, &a3);
+    ll_push(&l, &a4);
+    if(*((int*)ll_at(&l, 3)) == 4)
+        res = 0;
+    ll_destroy(&l, NULL);
     return res;
 }

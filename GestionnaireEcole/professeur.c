@@ -1,6 +1,6 @@
 #include "professeur.h"
 
-creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom)
+void creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom)
 {
     static unsigned int nextNum = 1;
     Professeur *p = (Professeur*)malloc(sizeof(Professeur));

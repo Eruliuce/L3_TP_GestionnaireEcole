@@ -4,7 +4,7 @@
 ///                                                 ///
 /// Auteurs : RIBEIRO Olivier & BRIANT Arnaud       ///
 /// Création : 17/09/2015                           ///
-/// Dernière modification : 20/10/2015              ///
+/// Dernière modification : 30/10/2015              ///
 ///                                                 ///
 /// Fonction : Test des fonctionnalités de la       ///
 ///            liste chaînée.                       ///
@@ -32,6 +32,8 @@ void testInsert();
 size_t testSize();
 size_t testRemove();
 size_t testGet();
+size_t testIndex();
+size_t testAt();
 
 #endif // TEST_LINKEDLIST_H_INCLUDED
 
