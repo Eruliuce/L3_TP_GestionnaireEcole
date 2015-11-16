@@ -11,7 +11,7 @@ Ecole* genererEcole()
     ec->listeEtudiants = NULL;
     ec->listeProfs = NULL;
     ec->listeCours = NULL;
-
+    ec->listeClasses = NULL;
     return ec;
 }
 

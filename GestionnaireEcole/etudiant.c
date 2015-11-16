@@ -1,15 +1,18 @@
 #include "etudiant.h"
+#include <string.h>
 
-void creerEtudiant(LinkedList *listeEtu, char* nom, char* prenom)
+#include "Outils\fonctions.h"
+
+void creerEtudiant(LinkedList **listeEtu, char* nom, char* prenom)
 {
     static int nextNum = 1;
     Etudiant *e = (Etudiant*)malloc(sizeof(Etudiant));
-    e->nom = nom;
-    e->prenom = prenom;
+    strcpy(e->nom, nom);
+    strcpy(e->prenom, prenom);
     e->num = nextNum;
     nextNum++;
     e->listeNotes = NULL;
-    ll_push(&listeEtu, e);
+    ll_push(listeEtu, e);
 }
 
 void affecterClasse(Etudiant* e, Classe* c)

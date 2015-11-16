@@ -8,3 +8,4 @@ void creerSeance(Cours *c, Salle *sa, char *date, char *horaire)
     s->horaire = horaire;
     ll_push((&(c->listeSeances)), s);
 }
+

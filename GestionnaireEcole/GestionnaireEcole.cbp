@@ -52,6 +52,12 @@
 		<Unit filename="constantes.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="controleur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="controleur.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="cours.c">
 			<Option compilerVar="CC" />
 		</Unit>

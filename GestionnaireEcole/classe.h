@@ -8,12 +8,12 @@
 typedef struct Classe Classe;
 struct Classe
 {
-    char *annee;
-    char *formation;
+    char annee[100];
+    char formation[100];
     LinkedList *listeEtudiants;
     LinkedList *listeCours;
 };
 
-void creerClasse(LinkedList *listeClasses, char* annee, char* formation);
+void creerClasse(LinkedList **listeClasses, char* annee, char* formation);
 
 #endif // CLASSE_H_INCLUDED

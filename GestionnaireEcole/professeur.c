@@ -1,6 +1,6 @@
 #include "professeur.h"
 
-void creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom)
+void creerProfesseur(LinkedList **listeProfs, char* nom, char* prenom)
 {
     static unsigned int nextNum = 1;
     Professeur *p = (Professeur*)malloc(sizeof(Professeur));
@@ -9,5 +9,6 @@ void creerProfesseur(LinkedList *listeProfs, char* nom, char* prenom)
     p->nom = nom;
     p->prenom = prenom;
     p->listeCours = NULL;
-    ll_push(&listeProfs, p);
+    ll_push(listeProfs, p);
 }
+
