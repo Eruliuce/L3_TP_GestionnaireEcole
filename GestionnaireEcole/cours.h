@@ -15,6 +15,6 @@ struct Cours
     LinkedList *listeSeances;
 };
 
-void creerCours(LinkedList* listeCours, char* matiere, Professeur* p, Classe *c);
+void creerCours(LinkedList** listeCours, char* matiere, Professeur* p, Classe *c);
 
 #endif // COURS_H_INCLUDED

@@ -1,11 +1,13 @@
 #include "classe.h"
+#include <string.h>
 
-void creerClasse(LinkedList *listeClasses, char* annee, char* formation)
+void creerClasse(LinkedList **listeClasses, char* annee, char* formation)
 {
     Classe *c = (Classe*)malloc(sizeof(Classe));
-    c->annee = annee;
-    c->formation = formation;
+    strcpy(c->annee, annee);
+    strcpy(c->formation, formation);
     c->listeCours = NULL;
     c->listeEtudiants = NULL;
+    ll_push(listeClasses, c);
 }
 

@@ -16,6 +16,7 @@ struct Ecole
     LinkedList *listeProfs;
     LinkedList *listeEtudiants;
     LinkedList *listeCours;
+    LinkedList *listeClasses;
 };
 
 Ecole* genererEcole();

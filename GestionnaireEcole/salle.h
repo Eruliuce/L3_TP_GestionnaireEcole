@@ -6,10 +6,10 @@
 typedef struct Salle Salle;
 struct Salle
 {
-    char *bat;
-    char *nom;
+    char bat[100];
+    char nom[100];
 };
 
-void creerSalle(LinkedList *listeSalles, char* bat, char* nom);
+void creerSalle(LinkedList **listeSalles, char* bat, char* nom);
 
 #endif // SALLE_H_INCLUDED
