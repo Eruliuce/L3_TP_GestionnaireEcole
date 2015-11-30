@@ -8,7 +8,7 @@ int main()
     Ecole *ec = new Ecole();
 
     bool quit = false;
-    while(!quit);
+    while(!quit)
     {
         int choix;
         do

@@ -10,19 +10,21 @@ Ecole::Ecole()
 void Ecole::afficherClasses()
 {
     std::cout << "Liste des classes :" << std::endl;
-    for(auto i = 1; i < classes.size(); i++)
+    for(size_t i = 1; i < classes.size(); i++)
     {
-        std::cout << " - " << classes.at(i)->getNom();
+        std::cout << " - " << classes.at(i)->getNom() << std::endl;
     }
+    std::cout << std::endl;
 }
 
 void Ecole::afficherEtudiants()
 {
     std::cout << "Liste des etudiants :" << std::endl;
-    for(auto i = 0; i < classes.size(); i++)
+    for(size_t i = 0; i < classes.size(); i++)
     {
         classes.at(i)->afficherEtudiants();
     }
+    std::cout << std::endl;
 }
 
 void Ecole::ajouterClasse()
@@ -44,10 +46,12 @@ void Ecole::ajouterEtudiant()
     std::cin >> classe;
     bool trouve = false;
     size_t i = 0;
-    while(!trouve && classes.at(i)->getNom().compare(classe))
+    while(!trouve && i < classes.size())
     {
+        trouve = !classes.at(i)->getNom().compare(classe);
         i++;
     }
+    i--;
     if(!trouve)
     {
         std::cerr << "Cette classe n'existe pas." << std::endl;
@@ -73,10 +77,12 @@ void Ecole::ajouterNote()
     std::cin >> matiere;
     bool trouve = false;
     size_t i = 0;
-    while(!trouve && etudiants.at(i)->getNum() == numEtu)
+    while(!trouve && i < etudiants.size())
     {
+        trouve = (etudiants.at(i)->getNum() == numEtu);
         i++;
     }
+    i--;
     if(!trouve)
     {
         std::cerr << "Cet etudiant n'existe pas." << std::endl;
@@ -94,10 +100,12 @@ void Ecole::afficherNotes()
     std::cin >> numEtu;
     bool trouve = false;
     size_t i = 0;
-    while(!trouve && etudiants.at(i)->getNum() == numEtu)
+    while(!trouve && i < etudiants.size())
     {
+        trouve = (etudiants.at(i)->getNum() == numEtu);
         i++;
     }
+    i--;
     if(!trouve)
     {
         std::cerr << "Cet etudiant n'existe pas." << std::endl;
@@ -105,5 +113,6 @@ void Ecole::afficherNotes()
     else
     {
         etudiants.at(i)->afficherNotes();
+        std::cout << std::endl;
     }
 }
