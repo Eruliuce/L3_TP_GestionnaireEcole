@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1448859497 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\classe.cpp
+	"classe.h"
+
+1448859497 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\classe.h
+	<iostream>
+	<string>
+	<vector>
+	"etudiant.h"
+
+1448861600 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\etudiant.h
+	<iostream>
+	<string>
+	<vector>
+	"note.h"
+
+1448861648 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\note.h
+	<iostream>
+	<string>
+
+1448861580 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\ecole.cpp
+	"ecole.h"
+
+1448861537 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\ecole.h
+	<iostream>
+	<string>
+	<vector>
+	"etudiant.h"
+	"classe.h"
+
+1448861635 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\main.cpp
+	<iostream>
+	"ecole.h"
+
+1448861537 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\etudiant.cpp
+	"etudiant.h"
+
+1448861537 source:c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecolecpp\note.cpp
+	"note.h"
+

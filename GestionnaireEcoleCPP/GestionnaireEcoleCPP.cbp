@@ -32,11 +32,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="classe.cpp" />
+		<Unit filename="classe.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ecole.cpp" />
 		<Unit filename="ecole.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="etudiant.cpp" />
+		<Unit filename="etudiant.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="personne.h">
+		<Unit filename="note.cpp" />
+		<Unit filename="note.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Extensions>
