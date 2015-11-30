@@ -237,3 +237,102 @@
 
 1447639306 c:\users\arnaud\développement\l3_tp_gestionnaireecole\gestionnaireecole\constantes.h
 
+<<<<<<< HEAD
+=======
+1446256257 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\classe.c
+	"classe.h"
+	<string.h>
+
+1446250378 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\classe.h
+	"Outils/linkedlist.h"
+	"classe.h"
+	"professeur.h"
+
+1446242996 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\outils\linkedlist.h
+	<stdlib.h>
+
+1446258384 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\professeur.h
+	"Outils/linkedlist.h"
+
+1447640053 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\controleur.c
+	"controleur.h"
+
+1447639539 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\controleur.h
+	<stdio.h>
+	<string.h>
+	"constantes.h"
+	"ecole.h"
+	"Outils/fonctions.h"
+
+1447639306 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\constantes.h
+
+1446250378 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\ecole.h
+	"Outils/linkedlist.h"
+	"professeur.h"
+	"classe.h"
+	"etudiant.h"
+	"salle.h"
+
+1446250378 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\etudiant.h
+	<stdlib.h>
+	"Outils/linkedlist.h"
+	"cours.h"
+	"classe.h"
+	"note.h"
+
+1446258246 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\cours.h
+	"Outils/linkedlist.h"
+	"professeur.h"
+	"salle.h"
+	"classe.h"
+
+1446249438 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\salle.h
+	"Outils/linkedlist.h"
+
+1445797422 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\note.h
+	"etudiant.h"
+
+1447637813 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\outils\fonctions.h
+	<stdlib.h>
+	<stdio.h>
+	"../cours.h"
+	"../etudiant.h"
+
+1446251445 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\ecole.c
+	<stdlib.h>
+	"ecole.h"
+
+1447638722 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\etudiant.c
+	"etudiant.h"
+	<string.h>
+	"Outils\fonctions.h"
+
+1447637813 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ecole.h"
+	"Outils/fonctions.h"
+	"Tests/linkedlist.h"
+	"controleur.h"
+
+1446241314 c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\tests\linkedlist.h
+	<stdlib.h>
+	"..\Outils\linkedlist.h"
+	"..\Outils\fonctions.h"
+
+1447637813 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\outils\fonctions.c
+	"fonctions.h"
+
+1447635022 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\outils\linkedlist.c
+	<stdlib.h>
+	<stdio.h>
+	"..\Outils\linkedlist.h"
+
+1446258384 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\professeur.c
+	"professeur.h"
+
+1446242398 source:c:\users\arnaud\dev\l3_tp_gestionnaireecole\gestionnaireecole\tests\linkedlist.c
+	<stdio.h>
+	"..\Tests\linkedlist.h"
+
+>>>>>>> 9cf5f17b2b648f605f50f9d50295bef97a297676
